@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { App } from "./App";
+import { Login } from "./views/Login";
+import { SignUp } from "./views/SignUp";
 const element = {
   user: {
     name: "Edison",
@@ -8,6 +10,8 @@ const element = {
   },
 };
 ReactDOM.render(
-  <App user={element.user}/>,
+  //<App user={element.user}/>,
+  //<SignUp></SignUp>,
+  <Login/>,
   document.getElementById("root")
 );
