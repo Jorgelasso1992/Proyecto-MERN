@@ -1,10 +1,18 @@
 import React from 'react'
-
-
-export function Avatar(props) {
+import styled from 'styled-components'
+const StyledAvatar = styled.div`
+    position: absolute;
+    top: 5px;
+    right: 10vh ;
+    img{
+        width: 60px;
+        height: 60px;
+    }
+`
+export function Avatar() {
     return (
-        <div className="AvatarContainer">
-            <img src={props.user.img} alt={props.user.name} />
-        </div>
+        <StyledAvatar>
+            <img src="https://cdn-icons-png.flaticon.com/512/147/147144.png" alt="{props.user.name}" />
+        </StyledAvatar>
     )
 }

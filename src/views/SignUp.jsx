@@ -1,6 +1,6 @@
 import React from "react";
 import { ReactComponent as Logo } from "../assets/Logo.svg";
-import Button from "../components/Button";
+import {Button} from "../components/Button";
 
 export function SignUp() {
   return (

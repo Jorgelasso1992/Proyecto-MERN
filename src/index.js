@@ -10,8 +10,8 @@ const element = {
   },
 };
 ReactDOM.render(
-  //<App user={element.user}/>,
-  //<SignUp></SignUp>,
-  <Login/>,
+  <App user={element.user}/>,
+  //<SignUp/>,
+  //<Login/>,
   document.getElementById("root")
 );
