@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Button } from "./Button";
 
 const StyledTable = styled.div`
-  position: relative;
+  position: absolute;
   margin: 0 5vmax;
   border: solid 9px #bcff78;
   border-radius: 40px;
@@ -36,14 +36,15 @@ const StyledTable = styled.div`
     padding: 20px;
   }
   .button-box {
-    width: 100%;
     position: sticky;
-    top: 2px;
+    right: 0;
+    top: 0;
     background: #916BBF;
     padding: 1.5vh;
   }
   button{
     margin-left: 10px;
+    border:none;
   }
 `;
 export function Table() {
@@ -51,7 +52,7 @@ export function Table() {
     <StyledTable>
       <div className="fecha">
         <label className="label-fecha" for="fecha">
-          Seleccionar por fecha:{" "}
+          Seleccionar por fecha:
         </label>
         <input className="input-fecha" type="date" name="fecha" />
       </div>
@@ -98,8 +99,9 @@ export function Table() {
             type="button"
             value="Editar"
             backgroundColor="#FF7878"
+            color="#fff"
           />
-          <Button type="button" value="Eliminar" backgroundColor="#4E4E4E" />
+          <Button type="button" value="Eliminar" backgroundColor="#4E4E4E" color="#fff"/>
         </div>
       </div>
     </StyledTable>

@@ -1,20 +1,20 @@
 import React from "react";
 import { ReactComponent as Logo } from "../assets/Logo.svg";
 import styled from "styled-components";
+import { Link, Route, Routes } from "react-router-dom";
+import { Main } from "./Main";
 
 const StyledFooter = styled.footer`
   width: 100%;
+  height: 40px;
   display: flex;
-
   align-items: center;
-  position: fixed;
-  bottom: 0;
   background: #ff7878;
   .container {
     display: flex;
     margin: auto;
   }
-  .logo{
+  .logo {
     position: relative;
     right: 25px;
     top: 10px;
@@ -27,7 +27,12 @@ export function Footer() {
     <StyledFooter>
       <div className="container">
         <p>Copyright &copy; 2021 - </p>
-        <Logo className="logo"/>
+        <Link to="/">
+          <Logo className="logo" />
+        </Link>
+        <Routes>
+          <Route path="/sho" element={<Main />} />
+        </Routes>
       </div>
     </StyledFooter>
   );

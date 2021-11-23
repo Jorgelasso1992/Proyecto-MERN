@@ -9,6 +9,7 @@ const StyledButton = styled.button`
   background-color: ${props => props.backgroundColor || "#916BBF"};
   border: none;
   border-radius: 109px;
+
   
 `;
 export function Button(props) {

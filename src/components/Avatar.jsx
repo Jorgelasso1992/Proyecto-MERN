@@ -5,8 +5,8 @@ const StyledAvatar = styled.div`
     top: 5px;
     right: 10vh ;
     img{
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 `
 export function Avatar() {

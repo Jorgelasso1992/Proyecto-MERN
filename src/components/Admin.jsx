@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Table} from '../components/Table'
+import {Table} from './Table'
 const StyledAdmin = styled.div`
     .title{
         text-align: center;
