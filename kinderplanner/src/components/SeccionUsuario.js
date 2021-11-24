@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, useParams, useRouteMatch } from "react-router-dom";
+import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
 import "../assets/css/SeccionUsuario.css";
 
 const Item = () => {
@@ -13,7 +13,7 @@ const Item = () => {
   }
 
 const SeccionUsuario = () => {
-    const { path } = useRouteMatch();
+    const { url, path } = useRouteMatch();
   
     return (
       <div>
@@ -33,7 +33,7 @@ const SeccionUsuario = () => {
                         <button class="guardaractividad" type="button">Guardar Actividad</button>
                     </div>
                 </div>
-                <div class="col-md-9" id="column">
+                <div class="column">
                     <label class="form-label">Numero de Semana:</label>
                     <label class="form-label">Día de Semana:</label>
                     <input type="text"/>

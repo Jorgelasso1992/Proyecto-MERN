@@ -1,5 +1,5 @@
 import React from "react";
-import {  Route, useParams, useRouteMatch } from "react-router-dom";
+import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
 import "../assets/css/secciondocente.css";
 
 const Item = () => {
@@ -13,7 +13,7 @@ const Item = () => {
   }
   
   const SeccionDocente = () => {
-    const {path } = useRouteMatch();
+    const { url, path } = useRouteMatch();
   
     return (
       <div>

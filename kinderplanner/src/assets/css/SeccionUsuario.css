@@ -26,7 +26,7 @@ h1{
     width: 160.3281px;
     height: 22px;
     text-align: center;
-    padding: 0px 30px;
+    padding: 0px 40px;
     font-family: Roboto, sans-serif;
     font-size: 12px;
     border-radius: 15px;
@@ -60,7 +60,7 @@ input{
     border-radius: 10px;
     margin: 10;
 }
-#column{
+.column{
     width: 447px;
     background: #916BBF;
     height: 482px;
