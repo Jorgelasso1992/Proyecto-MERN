@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
+import { Route, useParams, useRouteMatch } from "react-router-dom";
 import "../assets/css/SeccionUsuario.css";
 
 const Item = () => {
@@ -13,7 +13,7 @@ const Item = () => {
   }
 
 const SeccionUsuario = () => {
-    const { url, path } = useRouteMatch();
+    const { path } = useRouteMatch();
   
     return (
       <div>
