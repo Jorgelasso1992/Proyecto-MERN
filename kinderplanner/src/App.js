@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import Usuario from "./components/SeccionUsuario";
 import Docente from "./components/secciondocente";
 
@@ -25,7 +25,8 @@ export default function App() {
           </li>
         </ul>
       </nav>
-      <Switch>
+      <Routes>
+      
         <Route exact path="/">
           <Home />
         </Route>
@@ -35,7 +36,7 @@ export default function App() {
         <Route path="/secciondocente">
           <Docente />
         </Route>
-      </Switch>
+      </Routes>
     </div>
     
   );

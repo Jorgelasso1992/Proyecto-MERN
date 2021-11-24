@@ -13,7 +13,7 @@ const Item = () => {
   }
 
 const SeccionUsuario = () => {
-    const { path } = useRouteMatch();
+    
   
     return (
       <div>
@@ -83,9 +83,9 @@ const SeccionUsuario = () => {
                     </div>
                 </div>
             </div>          
-        <Route path={`${path}/:name`}>
-          <Item />
-        </Route>
+        
+          
+        
       </div>
     );
   };
