@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
+import {  Route, useParams, useRouteMatch } from "react-router-dom";
 import "../assets/css/secciondocente.css";
 
 const Item = () => {
@@ -13,15 +13,15 @@ const Item = () => {
   }
   
   const SeccionDocente = () => {
-    const { url, path } = useRouteMatch();
+    const { path } = useRouteMatch();
   
     return (
       <div>
-        <h1 class="text-center">Docentes</h1>
-        <div class="container d-lg-flex justify-content-lg-center align-items-lg-center">
-        <div class="col-md-9 text-center">
-            <span><label class="form-label">Numero de Semana:      </label>
-                <label class="form-label">Día de Semana: </label>
+        <h1 className="text-center">Docentes</h1>
+        <div className="container d-lg-flex justify-content-lg-center align-items-lg-center">
+        <div className="col-md-9 text-center">
+            <span><label className="form-label">Numero de Semana:      </label>
+                <label className="form-label">Día de Semana: </label>
                 <select>
                     <optgroup label="Semana">
                         <option value="" selected="">Semana 1</option>
@@ -47,42 +47,42 @@ const Item = () => {
             <div></div><textarea></textarea>
             <div></div>
             <div></div>
-            <div class="table-responsive">
-                <table class="table">
+            <div className="table-responsive">
+                <table className="table">
                     <tbody>
                         <tr>
                             <td className="celda">Actividad 1</td>
                             <td>
-                                <button class="btn btn-primary editar" type="button">Editar</button>
-                                <button class="btn btn-primary eliminar" type="button">Eliminar</button>
+                                <button className="btn btn-primary editar" type="button">Editar</button>
+                                <button className="btn btn-primary eliminar" type="button">Eliminar</button>
                             </td>
                         </tr>
                         <tr>
                             <td className="celda">Actividad 2</td>
                             <td>
-                                <button class="btn btn-primary editar" type="button">Editar</button>
-                                <button class="btn btn-primary eliminar" type="button">Eliminar</button>
+                                <button className="btn btn-primary editar" type="button">Editar</button>
+                                <button className="btn btn-primary eliminar" type="button">Eliminar</button>
                             </td>
                         </tr>
                         <tr>
                             <td>Actividad 3</td>
                             <td>
-                                <button class="btn btn-primary editar" type="button">Editar</button>
-                                <button class="btn btn-primary eliminar" type="button">Eliminar</button>
+                                <button className="btn btn-primary editar" type="button">Editar</button>
+                                <button className="btn btn-primary eliminar" type="button">Eliminar</button>
                             </td>
                         </tr>
                         <tr>
                             <td>Actividad 4</td>
                             <td>
-                                <button class="btn btn-primary editar" type="button">Editar</button>
-                                <button class="btn btn-primary eliminar" type="button">Eliminar</button>
+                                <button className="btn btn-primary editar" type="button">Editar</button>
+                                <button className="btn btn-primary eliminar" type="button">Eliminar</button>
                             </td>
                         </tr>
                         <tr>
                             <td>Actividad 5</td>
                             <td>
-                                <button class="btn btn-primary editar" type="button">Editar</button>
-                                <button class="btn btn-primary eliminar" type="button">Eliminar</button>
+                                <button className="btn btn-primary editar" type="button">Editar</button>
+                                <button className="btn btn-primary eliminar" type="button">Eliminar</button>
                             </td>
                         </tr>
                     </tbody>

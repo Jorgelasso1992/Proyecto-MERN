@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
+import { Route, useParams, useRouteMatch } from "react-router-dom";
 import "../assets/css/SeccionUsuario.css";
 
 const Item = () => {
@@ -13,69 +13,69 @@ const Item = () => {
   }
 
 const SeccionUsuario = () => {
-    const { url, path } = useRouteMatch();
+    const { path } = useRouteMatch();
   
     return (
       <div>
           <h1 >Mi Planeador</h1>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6" >
-                        <label class="form-label" >Numero de Semana:</label>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6" >
+                        <label className="form-label" >Numero de Semana:</label>
                         <input type="text" />
-                        <label class="form-label" >Día de la Semana:</label>
+                        <label className="form-label" >Día de la Semana:</label>
                         <input type="text"/>
-                        <label class="form-label">Descripcion de la Actividad:</label>
-                        <textarea class="areatextdescripcion" ></textarea>
-                        <label class="form-label">Duracion de la Actividad:</label>
-                        <textarea class="areaduracion">
+                        <label className="form-label">Descripcion de la Actividad:</label>
+                        <textarea className="areatextdescripcion" ></textarea>
+                        <label className="form-label">Duracion de la Actividad:</label>
+                        <textarea className="areaduracion">
                         </textarea>
-                        <button class="guardaractividad" type="button">Guardar Actividad</button>
+                        <button className="guardaractividad" type="button">Guardar Actividad</button>
                     </div>
                 </div>
-                <div class="column">
-                    <label class="form-label">Numero de Semana:</label>
-                    <label class="form-label">Día de Semana:</label>
+                <div className="column">
+                    <label className="form-label">Numero de Semana:</label>
+                    <label className="form-label">Día de Semana:</label>
                     <input type="text"/>
                     <input type="text"/>
-                    <label class="form-label-descripcion">Descripción:</label>
-                    <textarea class="areadescripcion"></textarea>
+                    <label className="form-label-descripcion">Descripción:</label>
+                    <textarea className="areadescripcion"></textarea>
                     <div></div>
-                    <div class="table-responsive">
-                        <table class="table">
+                    <div className="table-responsive">
+                        <table className="table">
                             <tbody>
                                 <tr>
-                                    <td class="celdatabla" >Actividad 1</td>
-                                    <td><button class="btn btn-primary editar" type="button" >Editar</button>
-                                        <button class="btn btn-primary eliminar" type="button" >Eliminar</button>
+                                    <td className="celdatabla" >Actividad 1</td>
+                                    <td><button className="btn btn-primary editar" type="button" >Editar</button>
+                                        <button className="btn btn-primary eliminar" type="button" >Eliminar</button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="celdatabla">Actividad 2</td>
+                                    <td className="celdatabla">Actividad 2</td>
                                     <td >
-                                        <button class="editar" type="button">Editar</button>
-                                        <button class="btn btn-primary eliminar" type="button">Eliminar</button>
+                                        <button className="editar" type="button">Editar</button>
+                                        <button className="btn btn-primary eliminar" type="button">Eliminar</button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="celdatabla">Actividad 3</td>
+                                    <td className="celdatabla">Actividad 3</td>
                                     <td>
-                                        <button class="editar" type="button">Editar</button>
-                                        <button class="btn btn-primary eliminar" type="button">Eliminar</button>
+                                        <button className="editar" type="button">Editar</button>
+                                        <button className="btn btn-primary eliminar" type="button">Eliminar</button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="celdatabla">Actividad 4</td>
+                                    <td className="celdatabla">Actividad 4</td>
                                     <td>
-                                        <button class="editar" type="button">Editar</button>
-                                        <button class="btn btn-primary eliminar" type="button">Eliminar</button>
+                                        <button className="editar" type="button">Editar</button>
+                                        <button className="btn btn-primary eliminar" type="button">Eliminar</button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Actividad 5</td>
+                                    <td className="celdatabla">Actividad 5</td>
                                     <td>
-                                        <button class="editar" type="button">Editar</button>
-                                        <button class="btn btn-primary eliminar" type="button">Eliminar</button>
+                                        <button className="editar" type="button">Editar</button>
+                                        <button className="btn btn-primary eliminar" type="button">Eliminar</button>
                                     </td>
                                 </tr>
                             </tbody>
