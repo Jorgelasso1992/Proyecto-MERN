@@ -10,6 +10,9 @@ import "./assets/css/App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Login from "./components/Login";
+import Registro from "./components/Registro"
+import SeccionDocente from "./components/secciondocente";
+import SeccionUsuario from "./components/SeccionUsuario";
 
 function App() {
   return (
@@ -26,8 +29,24 @@ function App() {
 
               <Nav className="justify-content-end">
                 <Nav>
-                  <Link to={"/Login"} className="nav-link">
+                  <Link to={"/users"} className="nav-link">
+                    Usuarios
+                  </Link>
+                </Nav>
+              </Nav>
+
+              <Nav className="justify-content-end">
+                <Nav>
+                  <Link to={"/login"} className="nav-link">
                     Login
+                  </Link>
+                </Nav>
+              </Nav>
+
+              <Nav className="justify-content-end">
+                <Nav>
+                  <Link to={"/registro"} className="nav-link">
+                    Registrarse
                   </Link>
                 </Nav>
               </Nav>
@@ -40,8 +59,10 @@ function App() {
             <Col md={12}>
               <div className="wrapper">
                 <Switch>
-                  <Route exact path="/" component={Login} />
-                  <Route path="/Login" component={Login} />
+                  <Route exact path="/" component={SeccionDocente} />
+                  <Route path="/users" component={SeccionUsuario} />
+                  <Route path="/login" component={Login} />
+                  <Route path="/registro" component={Registro} />
                 </Switch>
               </div>
             </Col>
