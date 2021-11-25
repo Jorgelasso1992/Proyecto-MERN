@@ -1,5 +1,4 @@
 import React from 'react'
-import "bootstrap/dist/css/bootstrap.css";
 import "../assets/css/Registro.css";
 import logo from "../assets/img/KinderPlannerLogo.jpg"
 

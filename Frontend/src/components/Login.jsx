@@ -1,5 +1,4 @@
 import React from 'react'
-import "bootstrap/dist/css/bootstrap.css";
 import "../assets/css/Login.css";
 import logo from "../assets/img/KinderPlannerLogo.jpg"
 import avatar from "../assets/img/avatar_2x.png"
