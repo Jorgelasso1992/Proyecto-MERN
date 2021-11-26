@@ -26,13 +26,7 @@ const Registro = () => {
                 <form className="form-signin">
                     <span className="reauth-email" />
                     <input className="form-control" type="email" id="inputEmail-3" placeholder="Correo:" required="" autofocus="" />
-                    <input className="form-control" type="email" id="inputEmail-5" placeholder="Confirmar correo:" required="" autofocus="" />
-                    <div className="checkbox" />
-                </form>
-                <form className="form-signin">
-                    <span className="reauth-email" />
                     <input className="form-control" type="password" id="inputEmail-1" placeholder="Contraseña" required="" autofocus="" />
-                    <input className="form-control" type="password" id="inputEmail-2" placeholder="Confirmar contraseña;" required="" autofocus="" />
                     <div className="checkbox" />
                 </form>
                 <button className="btn btn-primary d-block btn-signin mt-3 " type="submit">

@@ -18,7 +18,7 @@ const SeccionUsuario = () => {
     return (
       <div>
           <h1 >Mi Planeador</h1>
-            <div className="container">
+            <div className="container-usuario">
                 <div className="row">
                     <div className="col-md-6" >
                         <label className="form-label" >Numero de Semana:</label>

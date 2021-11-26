@@ -3,7 +3,7 @@ h1{
     font-family: Roboto, sans-serif;
     font-size: 35.38px;
 }
-.container{
+.container-usuario{
     margin: 0 auto;
     display: flex;
     justify-content: center;
