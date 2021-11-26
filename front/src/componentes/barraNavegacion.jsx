@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import {Navbar,Container,Nav,NavDropdown} from 'react-bootstrap';
+import logo from "../assets/img/KinderPlannerLogo.jpg"
 
 
 export default function BarraNavegacion() {
@@ -22,9 +23,9 @@ export default function BarraNavegacion() {
 
     return (
         <div>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="#FF7878" expand="lg" style={{backgroundColor: "#FF7878"}}>
                 <Container>
-                    <Navbar.Brand href="/">KinderPlanner</Navbar.Brand>
+                    <Navbar.Brand href="/"><img src={logo} alt="Logo" style={{width:250, heigh: 50, padding:0, margin:0}}/></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
