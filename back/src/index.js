@@ -13,6 +13,7 @@ app.use(cors({origen: '*'}))
 
 app.use('/docente',require('./routes/docente.routes'))
 app.use('/tareas',require('./routes/tareas.routes'))
+app.use('/admin',require('./routes/admin.routes'))
 
 app.listen(app.get('Port'),()=>{
     console.log('Hola soy el servidor - Puerto: ',app.get('Port'))
