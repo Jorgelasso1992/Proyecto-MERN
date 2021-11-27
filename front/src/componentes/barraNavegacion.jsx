@@ -6,11 +6,25 @@ export default function BarraNavegacion() {
 
     const[adentro,setAdentro] = useState(true)
     const[afuera,setAfuera] = useState(false)
+    const[showAdmin,setShowAdmin] = useState(true)
+
+    /*useEffect(() =>{
+        if(sessionStorage.getItem('token')){
+            setAdentro(false)
+            setAfuera(true)
+            setShowAdmin(true)
+        }
+    },[])*/
 
     useEffect(() => {
-       if(sessionStorage.getItem('token')){
-           setAdentro(false)
-           setAfuera(true)
+       if(sessionStorage.getItem('token') && sessionStorage.getItem('tipoUsuario')==='docente'){
+            setAdentro(false)
+            setAfuera(true)
+            setShowAdmin(true)
+       }else if(sessionStorage.getItem('token') && sessionStorage.getItem('tipoUsuario')==='admin'){
+            setAdentro(true)
+            setAfuera(true)
+            setShowAdmin(false)
        }
         
     },[])
@@ -41,6 +55,13 @@ export default function BarraNavegacion() {
                                 <NavDropdown.Divider/>
                                 <NavDropdown.Item href="/" onClick={()=>salir()} hidden={adentro}>Cerrar Sesión</NavDropdown.Item>
                             </NavDropdown>
+
+                            <NavDropdown title="Menu" id="basic-nav-dropdown" hidden={showAdmin}>
+                                <NavDropdown.Item href="/administradorDocentes" hidden={showAdmin}>Docentes</NavDropdown.Item>
+                                <NavDropdown.Divider/>
+                                <NavDropdown.Item href="/" onClick={()=>salir()} hidden={showAdmin}>Cerrar Sesión</NavDropdown.Item>
+                            </NavDropdown> 
+
                         </Nav>
                     </Navbar.Collapse>
                     <Navbar.Text hidden={adentro}>Bienvenido(a): {sessionStorage.getItem('nombres')}</Navbar.Text>

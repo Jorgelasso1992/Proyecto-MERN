@@ -6,6 +6,7 @@ const DocenteSchema = new Schema({
     apellidos: String,
     correo: String,
     contrasena:String,
+    tipoUsuario: { type: String, default: 'docente'},
     date:{type:Date, default: Date.now}
 })
 

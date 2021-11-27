@@ -27,10 +27,12 @@ export default function IngresarAdmin() {
         const token = respuesta.data.token
         const nombres = respuesta.data.nombres 
         const idUsuario = respuesta.data.id 
+        const tipoUsuario = respuesta.data.tipoUsuario
 
         sessionStorage.setItem('token',token)
         sessionStorage.setItem('nombres',nombres)
         sessionStorage.setItem('idUsuario',idUsuario)
+        sessionStorage.setItem('tipoUsuario',tipoUsuario)
 
         Swal.fire({
             icon:'success',

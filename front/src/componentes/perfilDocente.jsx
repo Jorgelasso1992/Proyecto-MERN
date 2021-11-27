@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState} from 'react'
 import Axios from 'axios'
 import {Button,Form} from 'react-bootstrap'
 
@@ -7,7 +7,6 @@ export default function PerfilDocente() {
     const[nombres,setNombres]=useState('')
     const[apellidos,setApellidos]=useState('')
     const[correo,setCorreo]=useState('')
-    const[contrasena,setContrasena]=useState('')
    
     const obtenerDocente = async() => {
         const id = sessionStorage.getItem('idUsuario')
@@ -21,7 +20,6 @@ export default function PerfilDocente() {
         setNombres(respuesta.data.nombres)
         setApellidos(respuesta.data.apellidos)
         setCorreo(respuesta.data.correo)
-        setContrasena(respuesta.data.contrasena)
       }
 
     obtenerDocente()

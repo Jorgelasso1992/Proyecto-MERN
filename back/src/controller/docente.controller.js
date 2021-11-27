@@ -26,7 +26,8 @@ docenteCtrl.crear = async (req,res)=>{
             mensaje: 'Docente Registrado',
             id: NuevoDocente._id,
             nombres:NuevoDocente.nombres,
-            token
+            token,
+            tipoUsuario: NuevoDocente.tipoUsuario
         })
     }
 }
@@ -48,7 +49,8 @@ if(match){
         mensaje: 'Has iniciado sesión',
         id: docente.id,
         nombres: docente.nombres,
-        token
+        token,
+        tipoUsuario: docente.tipoUsuario
     })
 }else{
     res.json({
@@ -61,6 +63,11 @@ if(match){
 docenteCtrl.listarId = async(req,res) => {
     const id =req.params.id
     const respuesta = await Docente.findById({_id: id})
+    res.json(respuesta)
+}
+
+docenteCtrl.listar = async(req,res) => {
+    const respuesta = await Docente.find()
     res.json(respuesta)
 }
 

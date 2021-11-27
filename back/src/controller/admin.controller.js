@@ -26,7 +26,8 @@ adminCtrl.crear = async (req,res)=>{
             mensaje: 'Administrador Registrado',
             id: NuevoAdmin._id,
             nombres:NuevoAdmin.nombres,
-            token
+            token,
+            tipoUsuario: NuevoAdmin.tipoUsuario
         })
     }
 }
@@ -48,7 +49,8 @@ if(match){
         mensaje: 'Has iniciado sesión como Administrador',
         id: admin.id,
         nombres: admin.nombres,
-        token
+        token,
+        tipoUsuario: admin.tipoUsuario
     })
 }else{
     res.json({
