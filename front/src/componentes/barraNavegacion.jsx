@@ -29,10 +29,7 @@ export default function BarraNavegacion() {
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="/registrarDocente" hidden={afuera}>Registrarse</Nav.Link>
-                            <Nav.Link href="/ingresarDocente" hidden={afuera}>Ingresar</Nav.Link>
                             <NavDropdown title="Menu" id="basic-nav-dropdown" hidden={adentro}>
-                                <NavDropdown.Item href="/perfilDocente" hidden={adentro}>Mi Perfil</NavDropdown.Item>
                                 <NavDropdown.Item href="/seccionTareas" hidden={adentro}>Tareas</NavDropdown.Item>
                                 <NavDropdown.Divider/>
                                 <NavDropdown.Item href="/" onClick={()=>salir()} hidden={adentro}>Cerrar Sesión</NavDropdown.Item>

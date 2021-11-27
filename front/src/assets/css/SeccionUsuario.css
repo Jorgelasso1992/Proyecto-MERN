@@ -6,12 +6,16 @@ h1{
 .container-usuario{
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    text-align: center;
 }
 .row{
     margin: 0px;
-    width: auto;
+    width: 500px;
+    align-self: center;
     justify-content: center;
+    text-align: center;
+    align-content: center;
 }
 .col-md-6{
     width: 225px;
@@ -61,13 +65,17 @@ input{
     margin: 10;
 }
 .column{
-    width: 447px;
+    width: 800px;
     background: #916BBF;
-    height: 482px;
+    height: 510px;
     margin: 20px 40;
     border-radius: 20px;
     padding: 20px;
     justify-content: center;
+    align-self: center;
+    justify-self: center;
+    justify-self: center;
+    text-align: center;
 }
 .form-label-descripcion{
     color: #ffff;

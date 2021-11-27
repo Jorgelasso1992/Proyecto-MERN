@@ -40,7 +40,7 @@ export default function IngresarDocente() {
                 timer: 2000
             })
 
-            window.location.href = '/perfilDocente'
+            window.location.href = '/seccionTareas'
         }
     }
 
