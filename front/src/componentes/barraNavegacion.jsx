@@ -29,7 +29,12 @@ export default function BarraNavegacion() {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link href="/registrarDocente" hidden={afuera}>Registrarse</Nav.Link>
-                            <Nav.Link href="/ingresarDocente" hidden={afuera}>Ingresar</Nav.Link>
+
+                            <NavDropdown title="Ingresar" id="basic-nav-dropdown" hidden={afuera}>
+                                <NavDropdown.Item href="/ingresarDocente" hidden={afuera}>Docente</NavDropdown.Item>
+                                <NavDropdown.Item href="/ingresarAdmin" hidden={afuera}>Administrador</NavDropdown.Item>
+                            </NavDropdown>
+
                             <NavDropdown title="Menu" id="basic-nav-dropdown" hidden={adentro}>
                                 <NavDropdown.Item href="/perfilDocente" hidden={adentro}>Mi Perfil</NavDropdown.Item>
                                 <NavDropdown.Item href="/seccionTareas" hidden={adentro}>Tareas</NavDropdown.Item>
