@@ -20,6 +20,10 @@ export default function home() {
         window.location.href = '/ingresarDocente'
     }
 
+    const ingresarAdmin = async () => {
+        window.location.href = '/ingresarAdmin'
+    }
+
     const registrarse = async () => {
         setTimeout(() => {
             window.location.href = '/registrarDocente'
@@ -83,7 +87,10 @@ export default function home() {
                                 Crea tu cuenta
                             </Button>
                             <Button className="Home-Top-Button" variant="info" size="sm" onClick={ingresar}>
-                                Inicia sesión
+                                Docente Inicia Sesión
+                            </Button>
+                            <Button className="Home-Top-Button" variant="info" size="sm" onClick={ingresarAdmin}>
+                                Admin Inicia Sesión
                             </Button>
                         </div>
                     </Col>

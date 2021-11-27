@@ -28,8 +28,10 @@ export default function BarraNavegacion() {
                     <Navbar.Brand href="/"><img src={logo} alt="Logo" style={{width:250, heigh: 50, padding:0, margin:0}}/></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
+                    <Nav className="me-auto">
+
                             <NavDropdown title="Menu" id="basic-nav-dropdown" hidden={adentro}>
+                                <NavDropdown.Item href="/perfilDocente" hidden={adentro}>Mi Perfil</NavDropdown.Item>
                                 <NavDropdown.Item href="/seccionTareas" hidden={adentro}>Tareas</NavDropdown.Item>
                                 <NavDropdown.Divider/>
                                 <NavDropdown.Item href="/" onClick={()=>salir()} hidden={adentro}>Cerrar Sesión</NavDropdown.Item>
