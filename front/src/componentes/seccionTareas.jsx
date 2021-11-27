@@ -106,18 +106,6 @@ export default function SeccionTareas() {
 
   }
 
-  //-------------
-
-  const [show, setShow] = useState(false);
-
-  const crearTarea = async (e) => {
-    setShow(true)
-  }
-
-  const handleClose = () => setShow(false);
-
-  //-------------
-
   const [titulo, setTitulo] = useState('')
   const [descripcion, setDescripcion] = useState('')
 
@@ -146,8 +134,6 @@ export default function SeccionTareas() {
       })
 
       obtenerTareas()
-
-      handleClose()
     }
   }
 
@@ -156,16 +142,15 @@ export default function SeccionTareas() {
     <div className="seccionUsuario">
       <br />
       <div className="container-usuario">
-        <div className="row justify-content-center text-center">
-          <div className="col-md-6" >
-            <Form >
-              <Form.Group className="mb-3 text-center" controlId="formNombres">
-                <Form.Label className="text-center justify-content-centerr"><h5 className="justify-content-center text-center">Titulo</h5></Form.Label>
+        <div className="row-usuario">
+          <div className="col-md-6-usuario" >
+            <Form className="form-usuario">
+              <Form.Group className="mb-3" controlId="formNombres">
+                <Form.Label><h5>Titulo</h5></Form.Label>
                 <Form.Control type="text" placeholder="Introducir titulo de la tarea" onChange={(e) => setTitulo(e.target.value)} />
               </Form.Group>
-
-              <Form.Group className="mb-3" controlId="formNombres" >
-                <Form.Label className="text-center justify-content-center"><h5 className="justify-content-center text-center">Descripción</h5></Form.Label>
+              <Form.Group className="mb-3" controlId="formDescripcion" >
+                <Form.Label><h5 >Descripción</h5></Form.Label>
                 <Form.Control as="textarea" placeholder="Introducir descripción de la tarea" rows={5} onChange={(e) => setDescripcion(e.target.value)} />
               </Form.Group>
               <Button variant="primary" onClick={registro} >
@@ -174,7 +159,7 @@ export default function SeccionTareas() {
             </Form>
           </div>
         </div>
-        <div className="column">
+        <div className="column-usuario">
           <MaterialTable
             title={"Tareas de " + sessionStorage.getItem('nombres')}
             columns={[
@@ -208,7 +193,7 @@ export default function SeccionTareas() {
           />
         </div>
       </div>
- 
+
       <Modal show={showActualizar} onHide={handleClose2}>
         <Modal.Header closeButton>
           <Modal.Title>Editar Tarea</Modal.Title>
