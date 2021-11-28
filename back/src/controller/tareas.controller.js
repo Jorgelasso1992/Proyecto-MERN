@@ -2,11 +2,12 @@ const TareasCtrl = {}
 const Tarea = require('../models/tareas.models')
 
 TareasCtrl.crear = async(req,res) => {
-    const {titulo,descripcion,correoDocente} = req.body
+    const {titulo,descripcion,correoDocente,fechaEntrega} = req.body
     const NuevaTarea = new Tarea({
         titulo,
         descripcion,
-        correoDocente
+        correoDocente,
+        fechaEntrega
     })
 
     const respuesta = await NuevaTarea.save()

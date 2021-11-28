@@ -54,6 +54,7 @@ export default function AdministradorDocentes() {
         id:tarea._id,
         titulo:tarea.titulo,
         descripcion:tarea.descripcion,
+        fechaEntrega:tarea.fechaEntrega
       }))
 
     //-------------------------
@@ -77,12 +78,6 @@ export default function AdministradorDocentes() {
                     initialPage:1
                 }}
                 actions={[
-                   /*  {
-                      icon:'delete',
-                      tooltip:'Eliminar',
-                      onClick:(event,rowData) => eliminar(rowData.id)
-                    },*/
-      
                     {
                       icon:'chevron_right',
                       tooltip:'Ver Tareas',
@@ -91,7 +86,7 @@ export default function AdministradorDocentes() {
                   ]}
             />   
 
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={show} onHide={handleClose} size={"xl"}>
                 <Modal.Header closeButton>
                     
                 </Modal.Header>
@@ -103,6 +98,7 @@ export default function AdministradorDocentes() {
                         { title: 'ID', field: 'id'},
                         { title: 'Titulo', field: 'titulo' },
                         { title: 'Descripcion', field: 'descripcion' },
+                        { title: 'Fecha de Entrega', field: 'fechaEntrega' },
                     ]}
 
                     data={data2} 
@@ -127,3 +123,5 @@ export default function AdministradorDocentes() {
         </div>
     )
 }
+
+

@@ -8,14 +8,6 @@ export default function BarraNavegacion() {
     const[afuera,setAfuera] = useState(false)
     const[showAdmin,setShowAdmin] = useState(true)
 
-    /*useEffect(() =>{
-        if(sessionStorage.getItem('token')){
-            setAdentro(false)
-            setAfuera(true)
-            setShowAdmin(true)
-        }
-    },[])*/
-
     useEffect(() => {
        if(sessionStorage.getItem('token') && sessionStorage.getItem('tipoUsuario')==='docente'){
             setAdentro(false)
@@ -65,6 +57,7 @@ export default function BarraNavegacion() {
                         </Nav>
                     </Navbar.Collapse>
                     <Navbar.Text hidden={adentro}>Bienvenido(a): {sessionStorage.getItem('nombres')}</Navbar.Text>
+                    <Navbar.Text hidden={showAdmin}>Administrador(a): {sessionStorage.getItem('nombres')}</Navbar.Text>
                 </Container>
             </Navbar>
         </div>

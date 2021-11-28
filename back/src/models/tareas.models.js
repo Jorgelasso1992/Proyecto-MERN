@@ -5,7 +5,8 @@ const TareasSchema = new Schema({
     titulo: String,
     descripcion: String,
     correoDocente: String,
-    date:{type:Date, default: Date.now}
+    date:{type:Date, default: Date.now},
+    fechaEntrega: String
 })
 
 //convertir a modelo

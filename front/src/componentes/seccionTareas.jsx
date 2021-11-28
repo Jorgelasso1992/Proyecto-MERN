@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react'
 import MaterialTable from 'material-table'
 import Axios from 'axios'
 import Swal from 'sweetalert2'
-import {Button,Modal,Form} from 'react-bootstrap'
+import {Button,Modal,Form,DatePicker} from 'react-bootstrap'
 
 export default function SeccionTareas() {
 
@@ -30,6 +30,7 @@ useEffect(() => {
     id:tarea._id,
     titulo:tarea.titulo,
     descripcion:tarea.descripcion,
+    fechaEntrega:tarea.fechaEntrega
   }))
 
 //-------------
@@ -52,6 +53,7 @@ const obtenerTarea = async(idParametro) => {
     setIdTarea(respuesta.data._id)
     setTitulo(respuesta.data.titulo)
     setDescripcion(respuesta.data.descripcion)
+    setFechaEntrega(respuesta.data.fechaEntrega)
   }
 
 //-------------
@@ -62,7 +64,8 @@ const actualizar = async (e) => {
     const token = sessionStorage.getItem('token')
     const tarea ={
       titulo,
-      descripcion
+      descripcion,
+      fechaEntrega
     }
   
     const respuesta = await Axios.put('/tareas/actualizar/'+id,tarea,{
@@ -119,12 +122,12 @@ const handleClose = () => setShow(false);
 
 const [titulo,setTitulo] = useState('')
 const [descripcion,setDescripcion] = useState('')
-    
+const [fechaEntrega,setFechaEntrega] = useState('')
 
     const registro = async (e) => {
         e.preventDefault()
         const token = sessionStorage.getItem('token')
-        const usuario = {titulo,descripcion,correoDocente:sessionStorage.getItem('idUsuario')}
+        const usuario = {titulo,descripcion,fechaEntrega,correoDocente:sessionStorage.getItem('idUsuario')}
         const respuesta = await Axios.post('./tareas/crear',usuario,{ headers:{'autorizacion':token}})
         console.log(respuesta)
         const mensaje = respuesta.data.mensaje
@@ -159,6 +162,7 @@ const [descripcion,setDescripcion] = useState('')
                     { title: 'ID', field: 'id'},
                     { title: 'Titulo', field: 'titulo' },
                     { title: 'Descripcion', field: 'descripcion' },
+                    { title: 'Fecha de Entrega', field: 'fechaEntrega' },
                 ]}
 
                 data={data} 
@@ -194,14 +198,19 @@ const [descripcion,setDescripcion] = useState('')
                 <Modal.Body>
                     
                 <Form >    
-                    <Form.Group className="mb-3" controlId="formNombres">
+                    <Form.Group className="mb-3" controlId="formTitulo">
                         <Form.Label>Titulo</Form.Label>
                         <Form.Control type="text"  placeholder="Introducir titulo de la tarea" onChange = {(e) => setTitulo(e.target.value)}  />
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formApellidos" >
+                    <Form.Group className="mb-3" controlId="formDescripcion" >
                         <Form.Label>Descripción</Form.Label>
                         <Form.Control  as="textarea" placeholder="Introducir descripción de la tarea" rows={5} onChange = {(e) => setDescripcion(e.target.value)} />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formFechaEntrga">
+                    <Form.Label>Fecha de entrega</Form.Label>
+                    <Form.Control type="date" onChange = {(e) => setFechaEntrega(e.target.value)}/>
                     </Form.Group>
                 </Form>
 
