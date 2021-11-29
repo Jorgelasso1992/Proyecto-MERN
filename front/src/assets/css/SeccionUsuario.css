@@ -8,16 +8,16 @@ h1{
 }
 .row-usuario{
     margin: 0px;
-    width: 500px;
+    width: 40%;
     align-self: center;
     align-items: center;
 }
 .col-md-6-usuario{
-    width: 225px;
+    width: 50%;
     background: #916BBF;
     margin-left: 150px;
     padding: 10px;
-    height: 400px;
+    height: 450px;
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -64,8 +64,8 @@ input{
 .column-usuario{
     width: 800px;
     background: #916BBF;
-    height: 510px;
-    margin: 20px 40;
+    height: 500px;
+    margin-top: 1;
     border-radius: 20px;
     padding: 20px;
 }

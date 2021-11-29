@@ -22,7 +22,7 @@ export default function IngresarDocente() {
             icon:'error',
             title:mensaje,
             showConfirmButton: false,
-            timer:1500
+            timer:1000
         })
     }else{
         const token = respuesta.data.token
@@ -39,7 +39,7 @@ export default function IngresarDocente() {
                 icon: 'success',
                 title: mensaje,
                 showConfirmButton: false,
-                timer: 2000
+                timer: 1000
             })
 
             window.location.href = '/seccionTareas'

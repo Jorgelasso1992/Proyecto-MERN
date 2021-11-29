@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react'
 import MaterialTable from 'material-table'
 import Axios from 'axios'
 import {Button,Modal} from 'react-bootstrap'
+import "../assets/css/admin.css"
 
 
 export default function AdministradorDocentes() {
@@ -60,11 +61,11 @@ export default function AdministradorDocentes() {
     //-------------------------
 
     return (
-        <div>
+        <div className="admin">
             <MaterialTable
                 title={'Docentes'}
                 columns={[
-                    { title: 'ID', field: 'id'},
+                    // { title: 'ID', field: 'id'},
                     { title: 'Nombres', field: 'nombres' },
                     { title: 'Apellidos', field: 'apellidos' },
                     { title: 'Correo', field: 'correo' },
@@ -73,9 +74,11 @@ export default function AdministradorDocentes() {
                 data={data} 
 
                 options={{
+                    pageSize: 50,
                     search: true,
-                    actionsColumnIndex:-1,
-                    initialPage:1
+                    actionsColumnIndex: -1,
+                    initialPage: 1,
+                    maxBodyHeight: "350px",
                 }}
                 actions={[
                     {
@@ -95,7 +98,7 @@ export default function AdministradorDocentes() {
                 <MaterialTable
                     title={"Tareas"}
                     columns={[
-                        { title: 'ID', field: 'id'},
+                        // { title: 'ID', field: 'id'},
                         { title: 'Titulo', field: 'titulo' },
                         { title: 'Descripcion', field: 'descripcion' },
                         { title: 'Fecha de Entrega', field: 'fechaEntrega' },

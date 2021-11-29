@@ -6,17 +6,17 @@ import logo from "../assets/img/KinderPlannerLogo.jpg"
 export default function BarraNavegacion() {
 
     const[adentro,setAdentro] = useState(true)
-    const[afuera,setAfuera] = useState(false)
+    // const[afuera,setAfuera] = useState(false)
     const[showAdmin,setShowAdmin] = useState(true)
 
     useEffect(() => {
        if(sessionStorage.getItem('token') && sessionStorage.getItem('tipoUsuario')==='docente'){
             setAdentro(false)
-            setAfuera(true)
+            // setAfuera(true)
             setShowAdmin(true)
        }else if(sessionStorage.getItem('token') && sessionStorage.getItem('tipoUsuario')==='admin'){
             setAdentro(true)
-            setAfuera(true)
+            // setAfuera(true)
             setShowAdmin(false)
        }
         
@@ -29,7 +29,7 @@ export default function BarraNavegacion() {
 
     return (
         <div>
-            <Navbar bg="#FF7878" expand="lg" style={{backgroundColor: "#FF7878"}}>
+            <Navbar bg="#FF7878" expand="lg" style={{backgroundColor: "#FF7878", fontSize:'20px'}}>
                 <Container>
                     <Navbar.Brand href="/"><img src={logo} alt="Logo" style={{width:250, heigh: 50, padding:0, margin:0}}/></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
