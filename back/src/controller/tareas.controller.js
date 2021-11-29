@@ -51,18 +51,4 @@ TareasCtrl.actualizar = async(req,res) => {
     })
 }
 
-/*PersonaCtrl.buscarPersonaCriterio = async(req,res) => {
-    const estadoVacuna = req.params.criterio
-
-    try{
-        const respuesta = await Persona.find({estadoVacuna:estadoVacuna})
-        res.json(respuesta)
-    }catch(error){
-        return res.status(400).json({
-            mensaje: 'Ocurrio un error',
-            error
-        })
-    }
-}*/
-
 module.exports = TareasCtrl

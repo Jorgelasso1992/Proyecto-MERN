@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react'
 import MaterialTable from 'material-table'
 import Axios from 'axios'
 import Swal from 'sweetalert2'
-import {Button,Modal,Form,DatePicker} from 'react-bootstrap'
+import {Button,Modal,Form} from 'react-bootstrap'
 
 export default function SeccionTareas() {
 
