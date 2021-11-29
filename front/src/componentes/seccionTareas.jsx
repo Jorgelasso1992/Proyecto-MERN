@@ -28,9 +28,10 @@ export default function SeccionTareas() {
   }
 
   const data = tareas.map((tarea) => ({
-    id: tarea._id,
-    titulo: tarea.titulo,
-    descripcion: tarea.descripcion,
+    id:tarea._id,
+    titulo:tarea.titulo,
+    descripcion:tarea.descripcion,
+    fechaEntrega:tarea.fechaEntrega
   }))
 
   //-------------
@@ -53,6 +54,7 @@ export default function SeccionTareas() {
     setIdTarea(respuesta.data._id)
     setTitulo(respuesta.data.titulo)
     setDescripcion(respuesta.data.descripcion)
+    setFechaEntrega(respuesta.data.fechaEntrega)
   }
 
   //-------------
@@ -63,7 +65,8 @@ export default function SeccionTareas() {
     const token = sessionStorage.getItem('token')
     const tarea = {
       titulo,
-      descripcion
+      descripcion,
+      fechaEntrega
     }
 
     const respuesta = await Axios.put('/tareas/actualizar/' + id, tarea, {
@@ -110,32 +113,146 @@ export default function SeccionTareas() {
   const [descripcion, setDescripcion] = useState('')
 
 
-  const registro = async (e) => {
-    e.preventDefault()
-    const token = sessionStorage.getItem('token')
-    const usuario = { titulo, descripcion, correoDocente: sessionStorage.getItem('idUsuario') }
-    const respuesta = await Axios.post('./tareas/crear', usuario, { headers: { 'autorizacion': token } })
-    console.log(respuesta)
-    const mensaje = respuesta.data.mensaje
+const handleClose = () => setShow(false);
 
-    if (mensaje !== 'Tarea Creada') {
-      Swal.fire({
-        icon: 'error',
-        title: mensaje,
-        showConfirmButton: false,
-        timer: 1500
-      })
-    } else {
-      Swal.fire({
-        icon: 'success',
-        title: 'Tarea Creada',
-        showConfirmButton: false,
-        timer: 1500
-      })
+//-------------
 
-      obtenerTareas()
-    }
-  }
+const [titulo,setTitulo] = useState('')
+const [descripcion,setDescripcion] = useState('')
+const [fechaEntrega,setFechaEntrega] = useState('')
+
+    const registro = async (e) => {
+        e.preventDefault()
+        const token = sessionStorage.getItem('token')
+        const usuario = {titulo,descripcion,fechaEntrega,correoDocente:sessionStorage.getItem('idUsuario')}
+        const respuesta = await Axios.post('./tareas/crear',usuario,{ headers:{'autorizacion':token}})
+        console.log(respuesta)
+        const mensaje = respuesta.data.mensaje
+
+        if(mensaje!=='Tarea Creada'){
+            Swal.fire({
+                icon:'error',
+                title:mensaje,
+                showConfirmButton:false,
+                timer:1500
+             })
+        }else{
+            Swal.fire({
+                icon:'success',
+                title:'Tarea Creada',
+                showConfirmButton:false,
+                timer:1500
+             })
+
+            obtenerTareas()
+
+            handleClose()
+        }
+    }   
+
+//-------------
+    return (
+        <div>
+            <MaterialTable
+                title={"Tareas de " + sessionStorage.getItem('nombres')}
+                columns={[
+                    { title: 'ID', field: 'id'},
+                    { title: 'Titulo', field: 'titulo' },
+                    { title: 'Descripcion', field: 'descripcion' },
+                    { title: 'Fecha de Entrega', field: 'fechaEntrega' },
+                ]}
+
+                data={data} 
+
+                options={{
+                    search: true,
+                    actionsColumnIndex:-1,
+                    initialPage:1
+                }}
+                actions={[
+                    {
+                      icon:'delete',
+                      tooltip:'Eliminar',
+                      onClick:(event,rowData) => eliminar(rowData.id)
+                    },
+      
+                    {
+                      icon:'edit',
+                      tooltip:'Editar',
+                      onClick:(event,rowData) => obtenerTarea(rowData.id)
+                    },
+                  ]}
+            />
+
+            <Button variant="primary" onClick={crearTarea} style={boton} >
+              Crear Tarea
+            </Button>
+
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Crear Tarea</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    
+                <Form >    
+                    <Form.Group className="mb-3" controlId="formTitulo">
+                        <Form.Label>Titulo</Form.Label>
+                        <Form.Control type="text"  placeholder="Introducir titulo de la tarea" onChange = {(e) => setTitulo(e.target.value)}  />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formDescripcion" >
+                        <Form.Label>Descripción</Form.Label>
+                        <Form.Control  as="textarea" placeholder="Introducir descripción de la tarea" rows={5} onChange = {(e) => setDescripcion(e.target.value)} />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formFechaEntrga">
+                    <Form.Label>Fecha de entrega</Form.Label>
+                    <Form.Control type="date" onChange = {(e) => setFechaEntrega(e.target.value)}/>
+                    </Form.Group>
+                </Form>
+
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                    Cerrar
+                    </Button>
+                    <Button variant="primary" onClick={registro}>
+                    Guardar
+                    </Button>
+                </Modal.Footer>
+                </Modal.Body>
+                
+            </Modal>
+
+           
+            <Modal show={showActualizar} onHide={handleClose2}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Editar Tarea</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    
+                <Form >    
+                    <Form.Group className="mb-3" controlId="formNombres">
+                        <Form.Label>Titulo</Form.Label>
+                        <Form.Control type="text"  placeholder="Introducir titulo de la tarea" onChange = {(e) => setTitulo(e.target.value)} value={titulo}/>
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formApellidos" >
+                        <Form.Label>Descripción</Form.Label>
+                        <Form.Control  as="textarea" placeholder="Introducir descripción de la tarea" rows={5} onChange = {(e) => setDescripcion(e.target.value)} value={descripcion}/>
+                    </Form.Group>
+                </Form>
+
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose2}>
+                    Cerrar
+                    </Button>
+                    <Button variant="primary" onClick={actualizar}>
+                    Guardar
+                    </Button>
+                </Modal.Footer>
+                </Modal.Body>
+                
+            </Modal>
 
   //-------------
   return (

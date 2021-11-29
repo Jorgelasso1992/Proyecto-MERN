@@ -27,8 +27,9 @@ docenteCtrl.crear = async (req, res) => {
         res.json({
             mensaje: 'Docente Registrado',
             id: NuevoDocente._id,
-            nombres: NuevoDocente.nombres,
-            token
+            nombres:NuevoDocente.nombres,
+            token,
+            tipoUsuario: NuevoDocente.tipoUsuario
         })
     }
 }
@@ -44,19 +45,20 @@ docenteCtrl.login = async (req, res) => {
 
     const match = await bcrypt.compare(contrasena, docente.contrasena)
 
-    if (match) {
-        const token = jwt.sign({ _id: docente._id }, 'Secreta')
-        res.json({
-            mensaje: 'Has iniciado sesión',
-            id: docente.id,
-            nombres: docente.nombres,
-            token
-        })
-    } else {
-        res.json({
-            mensaje: 'Contraseña incorrecta'
-        })
-    }
+if(match){
+    const token = jwt.sign({_id: docente._id},'Secreta')
+    res.json({
+        mensaje: 'Has iniciado sesión',
+        id: docente.id,
+        nombres: docente.nombres,
+        token,
+        tipoUsuario: docente.tipoUsuario
+    })
+}else{
+    res.json({
+        mensaje: 'Contraseña incorrecta'
+    })
+}
 
 }
 
@@ -66,4 +68,9 @@ docenteCtrl.listarId = async (req, res) => {
     res.json(respuesta)
 }
 
-module.exports = docenteCtrl
+docenteCtrl.listar = async(req,res) => {
+    const respuesta = await Docente.find()
+    res.json(respuesta)
+}
+
+module.exports=docenteCtrl

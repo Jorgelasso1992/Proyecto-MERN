@@ -2,11 +2,12 @@ const TareasCtrl = {}
 const Tarea = require('../models/tareas.models')
 
 TareasCtrl.crear = async(req,res) => {
-    const {titulo,descripcion,correoDocente} = req.body
+    const {titulo,descripcion,correoDocente,fechaEntrega} = req.body
     const NuevaTarea = new Tarea({
         titulo,
         descripcion,
-        correoDocente
+        correoDocente,
+        fechaEntrega
     })
 
     const respuesta = await NuevaTarea.save()
@@ -49,19 +50,5 @@ TareasCtrl.actualizar = async(req,res) => {
         mensaje: 'Tarea actualizada'
     })
 }
-
-/*PersonaCtrl.buscarPersonaCriterio = async(req,res) => {
-    const estadoVacuna = req.params.criterio
-
-    try{
-        const respuesta = await Persona.find({estadoVacuna:estadoVacuna})
-        res.json(respuesta)
-    }catch(error){
-        return res.status(400).json({
-            mensaje: 'Ocurrio un error',
-            error
-        })
-    }
-}*/
 
 module.exports = TareasCtrl

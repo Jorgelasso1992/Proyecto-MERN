@@ -9,6 +9,7 @@ import SeccionTareas from './componentes/seccionTareas'
 import IngresarAdmin from './componentes/ingresarAdmin'
 import AdministradorDocentes from './componentes/administradorDocentes'
 
+
 function App() {
   return (
     <div>

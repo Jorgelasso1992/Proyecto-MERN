@@ -17,21 +17,23 @@ export default function IngresarDocente() {
         console.log(respuesta)
         const mensaje = respuesta.data.mensaje
 
-        if (mensaje !== 'Has iniciado sesión') {
-            Swal.fire({
-                icon: 'error',
-                title: mensaje,
-                showConfirmButton: false,
-                timer: 1500
-            })
-        } else {
-            const token = respuesta.data.token
-            const nombres = respuesta.data.nombres
-            const idUsuario = respuesta.data.id
+    if(mensaje!=='Has iniciado sesión'){
+        Swal.fire({
+            icon:'error',
+            title:mensaje,
+            showConfirmButton: false,
+            timer:1500
+        })
+    }else{
+        const token = respuesta.data.token
+        const nombres = respuesta.data.nombres 
+        const idUsuario = respuesta.data.id 
+        const tipoUsuario = respuesta.data.tipoUsuario
 
-            sessionStorage.setItem('token', token)
-            sessionStorage.setItem('nombres', nombres)
-            sessionStorage.setItem('idUsuario', idUsuario)
+        sessionStorage.setItem('token',token)
+        sessionStorage.setItem('nombres',nombres)
+        sessionStorage.setItem('idUsuario',idUsuario)
+        sessionStorage.setItem('tipoUsuario',tipoUsuario)
 
             Swal.fire({
                 icon: 'success',
