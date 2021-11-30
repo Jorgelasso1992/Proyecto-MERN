@@ -37,7 +37,6 @@ export default function BarraNavegacion() {
                     <Nav className="me-auto">
 
                             <NavDropdown title="Menu" id="basic-nav-dropdown" hidden={adentro}>
-                                <NavDropdown.Item href="/perfilDocente" hidden={adentro}>Mi Perfil</NavDropdown.Item>
                                 <NavDropdown.Item href="/seccionTareas" hidden={adentro}>Tareas</NavDropdown.Item>
                                 <NavDropdown.Divider/>
                                 <NavDropdown.Item href="/" onClick={()=>salir()} hidden={adentro}>Cerrar Sesión</NavDropdown.Item>

@@ -166,7 +166,7 @@ const [fechaEntrega,setFechaEntrega] = useState('')
                 <Form.Control as="textarea" placeholder="Introducir descripción de la tarea" rows={5} onChange={(e) => setDescripcion(e.target.value)} />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formFechaEntrga">
-                <Form.Label style={{width:'100%', fontSize:'20px'}}>Fecha de Creación</Form.Label>
+                <Form.Label style={{width:'100%', fontSize:'20px'}}>Fecha de Actividad</Form.Label>
                 <Form.Control type="date" placeholder="Introducir fecha de la tarea" onChange = {(e) => setFechaEntrega(e.target.value)} />
                 </Form.Group>
               <Button variant="primary" onClick={registro} >
@@ -182,7 +182,7 @@ const [fechaEntrega,setFechaEntrega] = useState('')
               // { title: 'ID', field: 'id'},
               { title: 'Titulo', field: 'titulo' },
               { title: 'Descripcion', field: 'descripcion' },
-              { title: 'Fecha de Entrega', field: 'fechaEntrega' },
+              { title: 'Fecha de Actividad', field: 'fechaEntrega' },
             ]}
 
             data={data}
@@ -219,17 +219,17 @@ const [fechaEntrega,setFechaEntrega] = useState('')
 
           <Form >
             <Form.Group className="mb-3" controlId="formNombres">
-              <Form.Label>Titulo</Form.Label>
+              <Form.Label className="formModal">Titulo</Form.Label>
               <Form.Control type="text" placeholder="Introducir titulo de la tarea" onChange={(e) => setTitulo(e.target.value)} value={titulo} />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formApellidos" >
-              <Form.Label>Descripción</Form.Label>
+              <Form.Label className="formModal">Descripción</Form.Label>
               <Form.Control as="textarea" placeholder="Introducir descripción de la tarea" rows={5} onChange={(e) => setDescripcion(e.target.value)} value={descripcion} />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formFechaEntrga">
-                <Form.Label>Fecha de Creación</Form.Label>
+                <Form.Label className="formModal">Fecha de Actividad</Form.Label>
                 <Form.Control type="date" placeholder="Introducir fecha de la tarea" onChange = {(e) => setFechaEntrega(e.target.value)} value={fechaEntrega}/>
                 </Form.Group>
           </Form>
