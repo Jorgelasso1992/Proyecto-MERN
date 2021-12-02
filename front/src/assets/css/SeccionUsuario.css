@@ -4,6 +4,10 @@ h1{
     font-size: 35.38px;
 }
 .container-usuario{
+<<<<<<< HEAD:front/src/assets/css/SeccionUsuario.css
+=======
+    margin: 0 auto;
+>>>>>>> 3c24a61c98a4def87719a4cea54dc9809a5ef470:kinderplanner/src/assets/css/SeccionUsuario.css
     display: flex;
 }
 .row-usuario{
@@ -61,8 +65,13 @@ input{
     border-radius: 10px;
     margin: 10;
 }
+<<<<<<< HEAD:front/src/assets/css/SeccionUsuario.css
 .column-usuario{
     width: 800px;
+=======
+.column{
+    width: 447px;
+>>>>>>> 3c24a61c98a4def87719a4cea54dc9809a5ef470:kinderplanner/src/assets/css/SeccionUsuario.css
     background: #916BBF;
     height: 500px;
     margin-top: 1;

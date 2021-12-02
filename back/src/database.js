@@ -1,5 +1,8 @@
 const mongoose = require('mongoose')
-URI = ('mongodb+srv://dbGYM:GimnasioMEVN@cluster1.iibwx.mongodb.net/bdKinderPlanner_Final?authSource=admin&replicaSet=atlas-9moey3-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true')
+
+const URI = ('mongodb+srv://Ariel:ariel.1991@cluster0.cpe7o.mongodb.net/bdKinderplanner?retryWrites=true&w=majority')
+
+
 
 mongoose.connect(URI, {
     useNewUrlParser: true,
